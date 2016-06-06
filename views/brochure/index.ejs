@@ -1,0 +1,9 @@
+<h1>Brochures Index View</h1>
+<%= todo %>
+
+<h1>Preguntas</h1>
+<ul>
+	<% _.each(questions, function(question) { %>
+		<li><%= question.title %></li>
+	<% }); %>
+</ul>
