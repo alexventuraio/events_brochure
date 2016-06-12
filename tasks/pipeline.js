@@ -28,6 +28,11 @@ var jsFilesToInject = [
   // Load sails.io before everything else
   'js/dependencies/sails.io.js',
 
+  // load jquery before materialize.js
+  // 'js/dependencies/jquery-3.0.0.min.js',
+
+  // Also by pasting the JS file into js/dependencies folder to load before materialize
+
   // Dependencies like jQuery, or Angular are brought in here
   'js/dependencies/**/*.js',
 
