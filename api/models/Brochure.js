@@ -9,9 +9,17 @@ module.exports = {
 
 	attributes: {
 
+		index : { type: 'string' },
 		action : { type: 'string' },
 
-		index : { type: 'string' }
+		// Add a reference to Sponsors collection
+		sponsors: {
+			collection: 'sponsor',
+			via: 'brochure_id',
+			through: 'sponsorhasbrochure'
+
+			// dominant: true
+		},
 	}
 
 };

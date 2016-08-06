@@ -52,13 +52,13 @@ passport.serializeUser(function (user, done) {
 	console.log('▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸ Serialize User:', user);
 
 	// done(null, user.id);
-	done(null, user.permission_level);
+	done(null, user.email);
 });
 
-passport.deserializeUser(function (permission_level, done) {
-	console.log('▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸ Deserialize User:', permission_level);
+passport.deserializeUser(function (email, done) {
+	console.log('▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸ Deserialize User:', email);
 
-	findOneByAPI(permission_level, function (err, user) {
+	findOneByAPI(email, function (err, user) {
 		done(err, user);
 	});
 });
@@ -75,56 +75,33 @@ passport.use(new LocalStrategy({
 	passwordField: 'password'
 }, function (username, password, done) {
 
-	console.log('▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸ Parameters:', username, password);
-
 	/* Find the user by username. If there is no user with the given
 	 * username, or the password is not correct, set the user to `false` to
 	 * indicate failure and set a flash message. Otherwise, return the
 	 * authenticated `user`.
 	 */
-	// User.findOne({ username: username }, function (err, user) {
-	// 	if (err) { return done(err); }
-	// 	if (!user) {
-	// 		return done(null, false, {
-	// 			message: 'Unknown user username: ' + username
-	// 		});
-	// 	}
 
-	// 	bcrypt.compare(password, user.password, function (err, res) {
-	// 		if (!res)
-	// 			return done(null, false, {
-	// 				message: 'Invalid Password'
-	// 			});
-
-	// 		var returnUser = {
-	// 			username: user.username,
-	// 			createdAt: user.createdAt,
-	// 			id: user.id
-	// 		};
-
-	// 		return done(null, returnUser, {
-	// 			message: 'Logged In Successfully'
-	// 		});
-	// 	});
-	// });
+	console.log('▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸ Parameters:', username, password);
 
 	var options = {
-		// baseUrl: 'http://matchxperience.com.mx',
-		// uri: '/ws/acces.php',
-		baseUrl: 'https://aper-test.herokuapp.com',
-		uri: '/api/login',
+		baseUrl: 'http://matchxperience.com.mx',
+		uri: '/ws/acces.php',
+		// baseUrl: 'https://aper-test.herokuapp.com',
+		// uri: '/api/login',
 		method: 'POST',
 		json: true,
 		headers: {
 			// 'User-Agent': 'request',
-			// 'Authorization': 'Basic QWxhZGRpbjpPcGVuU2VzYW1l'
+			// 'Authorization': 'Basic QWxhZGRpbjpPcGVuU2VzYW1l',
+			'Content-Type': 'application/x-www-form-urlencoded',
+			'Access-Control-Allow-Origin': '*'
 		},
 		qs: {
-			// usuario: username,
-			// contraseña: password,
-			email: 'alex@me.com',
-			password: '12345678',
-			format: 'json'
+			usuario: username,
+			password: password,
+			// email: 'alex@me.com',
+			// password: 'venturaa',
+			// format: 'json'
 		}
 	};
 
@@ -139,7 +116,7 @@ passport.use(new LocalStrategy({
 			});
 		} else {
 			return done(err, false, {
-				message: 'Unknown user email: ' + email
+				message: 'Unknown user email: ' + username
 			});
 		}
 	});

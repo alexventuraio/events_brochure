@@ -4,17 +4,19 @@
  * then we can bind this policy to any of the controllers in the app.
  */
 
-module.exports = function (req, res, next) {
+module.exports = (req, res, next) => {
 
 	// User is allowed, proceed to controller
-	var is_auth = req.isAuthenticated();
+	// var is_auth = req.isAuthenticated();
 
-	if (is_auth) {
-		return next();
-	}
-	// User is not allowed
-	else {
-		return res.redirect("/login");
-	}
+	// if (is_auth) {
+	// 	return next();
+	// }
+	// // User is not allowed
+	// else {
+	// 	return res.redirect("/login");
+	// }
+
+	next();
 
 };
