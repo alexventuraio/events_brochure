@@ -1,0 +1,76 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+.icon-block {
+	padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
+.main-nav {
+	background-color: #2d2d2d;
+	color: #666;
+	padding: 0;
+	margin: 0;
+	/*font-family: 'Raleway', sans-serif;*/
+	/*font-size: 10px;*/
+	/*letter-spacing: 2px;*/
+	/*font-weight: 700;*/
+	text-transform: uppercase;
+}
+.brand-logo img {
+	max-height: 50px;
+	vertical-align: middle;
+	width: auto;
+}
+.btn-green {
+	background-color: #2ecc71;
+}
+.btn-green:hover {
+	background-color: #27ae60;
+}
+.modal {
+	padding: 0px;
+}
+.modal-header {
+	background-color: #484848;
+	border-bottom: solid 1px #ecf0f1;
+	color: #fff;
+	float: left;
+	margin-bottom: 20px;
+	padding: 20px 35px;
+	width: 100%;
+}
+/* Estilos al footer */
+.page-footer-lmx {
+	/*background-color: rgba(51, 51, 51, 8);*/
+	background-color: #333;
+	color: #999999;
+	margin-top: 20px;
+	padding-top: 20px;
+}
+/* Parte baja del footer */
+.page-footer-lmx .footer-copyright {
+	/*color: rgba(255, 255, 255, 0.8);*/
+	background-color: #202020;
+	color: #999999;
+	height: 50px;
+	line-height: 50px;
+	overflow: hidden;
+}
+/* Links en el footer */
+footer div a {
+	color: #999999;
+	text-decoration: none;
+	-webkit-tap-highlight-color: transparent;
+}
+footer a:hover {
+	color: #2ecc71;
+	text-decoration: none;
+	-webkit-tap-highlight-color: transparent;
+}
