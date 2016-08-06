@@ -1,0 +1,66 @@
+<div class="navbar-fixed">
+	<nav class="main-nav">
+		<div class="nav-wrapper">
+			<div class="nav-logo">
+				<a href="#!" class="brand-logo">
+					<img class="responsive-img" src="images/matchx-logo-blanco.png" alt="Logo">
+				</a>
+			</div>
+			<ul class="right hide-on-med-and-down">
+				<!-- <li><a href="/login">Iniciar Sesión</a></li> -->
+				<!-- Modal Trigger -->
+				<li><a href="#login_modal" class="modal-trigger">Iniciar Sesión</a></li>
+				<li><a href="/brochures">Brochures</a></li>
+			</ul>
+			<ul class="side-nav" id="slide-out">
+				<li><a href="/login">Iniciar Sesión</a></li>
+				<li><a href="/brochures">Brochures</a></li>
+			</ul>
+			<a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+		</div>
+	</nav>
+</div>
+
+<!-- Modal Structure -->
+<div id="login_modal" class="modal z-depth-1 grey lighten-4 row">
+	<div class="modal-content" style="padding: 0px;">
+		<div class="modal-header">
+			<h5>
+				<i class="small material-icons">supervisor_account</i>
+			Inisiar sesión</h5>
+		</div>
+		<form class="col l12" method="POST" action="/login">
+			<div class="row">
+				<div class="input-field col s12">
+					<input id="email" type="text" class="validate" name="email" value="hektorhugo">
+					<label for="email">Username</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s12">
+					<input id="password" type="password" class="validate" name="password" value="46064606">
+					<label for="pass">Password</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s12">
+					<p>
+						<input type="checkbox" id="remember">
+						<label for="remember">Recordarme</label>
+					</p>
+				</div>
+			</div>
+			<div class="divider"></div>
+			<div class="row">
+				<div class="col m12">
+					<p class="right-align">
+						<button class="col s12 btn btn-large waves-effect btn-green" type="submit" name="login">Iniciar Sesión</button>
+					</p>
+				</div>
+			</div>
+		</form>
+	</div>
+	<!-- <div class="modal-footer">
+		<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+	</div> -->
+</div>

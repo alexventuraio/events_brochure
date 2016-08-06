@@ -17,6 +17,9 @@
 // (if you're using LESS with the built-in default config, you'll want
 //  to change `assets/styles/importer.less` instead.)
 var cssFilesToInject = [
+  // Load materialize.css before any custom CSS file
+  'styles/materialize/materialize.min.css',
+
   'styles/**/*.css'
 ];
 
@@ -28,13 +31,16 @@ var jsFilesToInject = [
   // Load sails.io before everything else
   'js/dependencies/sails.io.js',
 
-  // load jquery before materialize.js
+  // Load jquery before materialize.js
   // 'js/dependencies/jquery-3.0.0.min.js',
 
   // Also by pasting the JS file into js/dependencies folder to load before materialize
 
   // Dependencies like jQuery, or Angular are brought in here
   'js/dependencies/**/*.js',
+
+  // Load materialize.js before any custom JS file
+  'js/materialize/materialize.min.js',
 
   // All of the rest of your client-side js files
   // will be injected here in no particular order.
