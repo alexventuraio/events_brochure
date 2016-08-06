@@ -20,7 +20,7 @@ module.exports = {
 	/**
 	 * `AuthController.login()`
 	 */
-	login: function (req, res) {
+	login: (req, res) => {
 		// passport.authenticate('local', {
 		// 	successRedirect: '/secure',
 		// 	failureRedirect: '/'
@@ -28,7 +28,7 @@ module.exports = {
 		// 	if (err) return res.negotiate(err);
 		// 	return res.notFound();
 		// });
-		passport.authenticate('local', function (err, user, info) {
+		passport.authenticate('local', (err, user, info) => {
 
 			console.log('▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸▸ CTRL:', err, user, info);
 
@@ -42,7 +42,7 @@ module.exports = {
 				return;
 			}
 
-			req.logIn(user, function (err) {
+			req.logIn(user, (err) => {
 				if (err) {
 					return res.send(err);
 				}
@@ -59,7 +59,7 @@ module.exports = {
 	/**
 	 * `AuthController.logout()`
 	 */
-	logout: function (req, res) {
+	logout: (req, res) => {
 		req.logout();
 		req.session.user = null;
 		req.session.flash = 'You have logged out';
@@ -67,4 +67,3 @@ module.exports = {
 	}
 
 };
-

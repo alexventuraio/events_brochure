@@ -12,7 +12,7 @@ module.exports = {
 	/**
 	 * `BrochureController.index()`
 	 */
-	index: function (req, res) {
+	index: (req, res) => {
 		return res.view({
 			todo: 'index() is not implemented yet!',
 			questions: [{title: 'Freddy a presidente?', content: 'Últimamente Freddy se encuentra con más diplomacia.'}]
@@ -23,11 +23,10 @@ module.exports = {
 	/**
 	 * `BrochureController.action()`
 	 */
-	action: function (req, res) {
+	action: (req, res) => {
 		return res.json({
 			todo: 'action() is not implemented yet!'
 		});
 	}
 
 };
-
